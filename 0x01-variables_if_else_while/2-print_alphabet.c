@@ -1,13 +1,17 @@
 #include <stdio.h>
 /**
- * main : Entry point
- * Description: of this program
- * Return : always 0
+ * main: Entry point
+ *
+ * Description: 'This program prints the alphabet in lowercase,
+ * followed by a new line
+ *
+ * Return: always 0
  */
 int main(void)
 {
-int myStr;
-	for (myStr = 97; myStr <= 122; myStr++)
+	int myStr;
+
+	for (myStr = 97; myStr < 123; myStr++)
 	{
 	putchar(myStr);
 	}
