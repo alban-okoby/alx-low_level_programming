@@ -9,11 +9,11 @@
  */
 int main(void)
 {
-	int a  = 0, b;
+	int a  = 0, b = 0;
 
 	while (a < 100)
 	{
-		b  = a
+		b  = a;
 		while (b < 100)
 		{
 			if (a != b)
