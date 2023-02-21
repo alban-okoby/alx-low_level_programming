@@ -3,9 +3,9 @@
 /**
  * main - Entry point
  *
- * Description: Print base program
+ * Description: 'Print base program'
  *
- * Return : Always 0
+ * Return: Always 0
  */
 int main(void)
 {
