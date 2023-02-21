@@ -13,7 +13,7 @@ int main(void)
 
 	for (chaine = 48; chaine <= 57; chaine++)
 	{
-		putchar(str);
+		putchar(chaine);
 	}
 	putchar(10);
 	return (0);
