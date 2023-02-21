@@ -9,16 +9,14 @@
  */
 int main(void)
 {
-	int myStr;
+	char myStr = 'a';
 
-	for (myStr = 97; myStr < 123; myStr++)
+	while (myStr <= 'z')
 	{
-	putchar(myStr);
+		putchar(myStr);
+		++myStr;
 	}
-	for (myStr = 65; myStr <= 90; myStr++)
-	{
-	putchar(myStr);
-	}
-	putchar(10);
+
+	putchar('\n');
 	return (0);
 }
