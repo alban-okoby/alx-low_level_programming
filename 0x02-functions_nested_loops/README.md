@@ -1,0 +1,2 @@
+#!/bin/bash
+FUNCTIONS, AND LOOPS
