@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- * min -> print if integer is negative or positive
+ * main -> print if integer is negative or positive
  * Return: 0
  */
 int main(void)
