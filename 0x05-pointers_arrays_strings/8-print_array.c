@@ -2,14 +2,14 @@
 #include <stdio.h>
 
 /**
- * printf_array - Entry point
+ * print_array - Entry point
  * Description: This function ..
  * @a: first param
  * @n: second param
  * Return: Always 0
  */
 
-void printf_array(int *a, int n)
+void print_array(int *a, int n)
 {
 	int i;
 
@@ -17,6 +17,6 @@ void printf_array(int *a, int n)
 	{
 		printf("%d", a[i]);
 		if (i != n - 1)
-			printf(",");
+			printf(", ");
 	}
 
