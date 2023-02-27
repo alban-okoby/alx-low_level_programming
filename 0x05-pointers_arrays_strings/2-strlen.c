@@ -6,7 +6,7 @@
  * Return: return length of variable
  */
 
-void _strlen(char *s)
+int _strlen(char *s)
 {
 	int k = 0;
 	char l;
