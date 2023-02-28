@@ -1,23 +1,26 @@
 #include "main.h"
-#include <string.h>
+#include <time.h>
 #include <stdio.h>
 
 /**
- * crackme - Entry point
+ * main - Entry point
  * description: This function generates random valid passwords for
- * the program 101.crackme
  * Return: Always 0
  */
 
-void crackme(void)
+int main(void)
 {
-	void crackme(void)
+	int result;
+	char c;
+
+	srand(time(NULL));
+
+	while (result <= 2645)
 	{
-		printf("%d", rand());
+		c = rand() % 128;
+		result += c;
+		putchar(c);
 	}
-	int main(void)
-	{
-		crackme();
-		return (0);
-	}
+	putchar(2772 - result);
+	return (0);
 }
