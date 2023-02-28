@@ -11,27 +11,13 @@
 
 void crackme(void)
 {
-	int i, n, result;
-	int tab[100];
-
-	result = 0;
-
-	srand(time(NULL));
-
-	for (i = 0; i <= 99; i++)
+	void crackme(void)
 	{
-		tab[i] = rand() % 78;
-		result += (tab[i] + '0');
-		putchar(tab[i] + '0');
-
-		if ((2772 - result) - '0' < 78)
-		{
-			n = 2772 - result - '0';
-			result += n;
-			putchar(n + '0');
-			break;
-		}
+		printf("%d", rand());
 	}
-
-	return (0);
+	int main(void)
+	{
+		crackme();
+		return (0);
+	}
 }
