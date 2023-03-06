@@ -17,7 +17,7 @@ void print_diagsums(char *a, int size)
 	{
 		if (i % (size + 1) == 0)
 			sum1 += a[i];
-		if (i % (size - 1) == 0 && i < (size * siz - 1) && i != 0)
+		if (i % (size - 1) == 0 && i < (size * size - 1) && i != 0)
 			sum2 += a[i];
 	}
 	printf("%d, %d\n", sum1, sum2);
