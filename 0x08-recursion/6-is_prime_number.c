@@ -12,7 +12,7 @@ int prime(int x, int y)
 {
 	if (x == y)
 		return (1);
-	if (x % y == 0)
+	else if (x % y == 0)
 		return (0);
 	return (prime(x, y + 1));
 }
