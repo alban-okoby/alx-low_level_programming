@@ -1,11 +1,11 @@
 
 <h3> Project 0x08 </h3>
 
-###Requirements
+### Requirements
 <p> Allowed editors: vi, vim, emacs </p>
 
 
-###General
+### General
 - What is recursion 
 - How to implement recursion
 - In what situations you should implement recursion 
