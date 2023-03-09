@@ -9,32 +9,13 @@
 
 int is_palindrome(char *s)
 {
-	if (*s != '\0')
+	int i;
+	int taille = strlen(s);
+
+	for (i = 0; i < taille / 2; i++)
 	{
-		if (*s == compare(s))
-		{
-			s += 1;
-			return (is_palindrome(s));
-		}
-		else
+		if (s[i] != s[taille -  i - 1])
 			return (0);
 	}
-	else
-		return (1);
-}
-
-/**
- * compare - entry print
- * @s: param -> string
- * Return: number -> integer
- */
-
-char compare(char *s)
-{
-	if (*s == '\0')
-		return (0);
-	s++;
-	compare(s);
-	s--;
-	return (*s);
+	return (1);
 }
