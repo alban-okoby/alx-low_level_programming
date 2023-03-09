@@ -7,7 +7,7 @@
  * Return: 1 if is palindrome else 0
  */
 
-int palindrome(char *s)
+int is_palindrome(char *s)
 {
 	if (*s != '\0')
 	{
@@ -17,7 +17,7 @@ int palindrome(char *s)
 			return (is_palindrome(s));
 		}
 		else
-			return (0)
+			return (0);
 	}
 	else
 		return (1);
