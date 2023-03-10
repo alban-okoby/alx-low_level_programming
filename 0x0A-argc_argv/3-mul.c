@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include<stlib.h>
 
 /**
  * main - entry point
@@ -9,9 +10,15 @@
 
 int main(int argc, char *argv[])
 {
-	int k;
+	int k, result;
 
-	for (k = 0; k < argc; k++)
-		printf("%s\n", argv[k]);
+	if (argc != 3)
+	{
+		printf("Error\n")
+		return (1);
+	}
+	for (k = 0; k <= argc; k++)
+		result = atoi(argv[i]);
+	printf("%d\n", result);
 	return (0);
 }
