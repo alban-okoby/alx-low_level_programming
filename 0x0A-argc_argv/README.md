@@ -1,6 +1,4 @@
-<h2> PROJECT 09:0x08 - Recursion </h2>
-
-<h2> PROJECT 10: 0x0A. C - argc, argv </h2>
+<h2>0x0A. C - argc, argv </h2>
 
 <h3> General </h3>
 <ul>
