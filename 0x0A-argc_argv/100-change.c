@@ -11,9 +11,11 @@
 int purge(int nbre, int n, int *t)
 {
 	int g = nbre / t[n], i;
+
 	if (nbre % (g * t[n]) != 0)
 	{
 		int b = nbre - (g * t[n - 1]);
+
 		for (i = n + 1; i < 5; i++)
 		{
 			if (b < t[i])
@@ -22,6 +24,7 @@ int purge(int nbre, int n, int *t)
 			else
 			{
 				int count = b / t[i];
+
 				g += count;
 				purge(b, n + 1, t);
 			}
@@ -43,6 +46,7 @@ int main(int argc, char *argv[])
 {
 	int t[5] = {25, 10, 5, 2, 1};
 	int i, p = 0;
+
 	if (argc == 2)
 	{
 		if (atoi(argv[1]) < 0)
@@ -60,6 +64,7 @@ int main(int argc, char *argv[])
 					break;
 			}
 			int h = atoi(argv[1]);
+
 			return (purge(h, p, t));
 		}
 	}
