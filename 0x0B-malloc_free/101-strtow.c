@@ -3,9 +3,8 @@
 #include <string.h>
 #include "main.h"
 /**
-*strtow - Prototype that return a pointer to an array
-of string (words)
-*@str: parameter -> string
+*count_word - Prototype
+*@s: parameter -> string
 *Return: NULL if str == NULL or str == ""
 */
 int count_word(char *s)
