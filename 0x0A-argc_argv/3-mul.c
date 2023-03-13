@@ -1,24 +1,24 @@
+#include "main.h"
 #include <stdio.h>
-#include<stlib.h>
+#include <stdlib.h>
 
 /**
- * main - entry point
- * @argv: the offset value
- * @argc: count of the offset
- * Return: always 0
- */
+*main - multiplies
+*@argc: parameter
+*@argv: parameter
+*Return: always 0 or 1
+*/
 
 int main(int argc, char *argv[])
 {
-	int k, result;
-
-	if (argc != 3)
+	if (argc == 3)
 	{
-		printf("Error\n")
+		printf("%d\n", atoi(argv[1]) * atoi(argv[2]));
+		return (0);
+	}
+	else
+	{
+		printf("%s\n", "Error");
 		return (1);
 	}
-	for (k = 0; k <= argc; k++)
-		result *= atoi(argv[k]);
-	printf("%d\n", result);
-	return (0);
 }
