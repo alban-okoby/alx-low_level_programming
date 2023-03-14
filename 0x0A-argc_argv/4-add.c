@@ -4,17 +4,17 @@
 #include <ctype.h>
 
 /**
- * main - entry point
- * @argv: the offset value
- * @argc: count of the offset
- * Return: always 0
+ * main - adds positive number
+ * @argc: n args
+ * @argv: arr args
+ * Return: always return 0
  */
 
 int main(int argc, char *argv[])
 {
-	unsigned int k, result, nbre;
+	unsigned int i, sum, num;
 
-	result = 0;
+	sum = 0;
 
 	if (argc < 3)
 	{
@@ -23,17 +23,17 @@ int main(int argc, char *argv[])
 	}
 	while (argc-- && argc > 0)
 	{
-		for (k = 0; argv[argc][k] != '\0', k++)
+		for (i = 0; argv[argc][i] != '\0'; i++)
 		{
-			if (!(isdigit(argv[argc][k])))
+			if (!(isdigit(argv[argc][i])))
 			{
-				print("Error\n");
+				printf("Error\n");
 				return (1);
 			}
 		}
-		result = atoi(argv[argc]);
-		result += result;
+		num = atoi(argv[argc]);
+		sum += num;
 	}
-	print("%d\n", result);
-	return (result);
+	printf("%d\n", sum);
+	return (sum);
 }

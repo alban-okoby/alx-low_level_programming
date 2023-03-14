@@ -1,76 +1,55 @@
-#include "main.h"
+#include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
 
 /**
-* purge - counter
-* @nbre: parameter
-* @n: number
-* @t: array
-* Return: integer
-*/
-int purge(int nbre, int n, int *t)
-{
-	int g = nbre / t[n], i;
-
-	if (nbre % (g * t[n]) != 0)
-	{
-		int b = nbre - (g * t[n - 1]);
-
-		for (i = n + 1; i < 5; i++)
-		{
-			if (b < t[i])
-				continue;
-
-			else
-			{
-				int count = b / t[i];
-
-				g += count;
-				purge(b, n + 1, t);
-			}
-		}
-	}
-	else
-		printf("%d\n", g);
-	return (0);
-}
-
-/**
-*main - change
-*@argc: parameter
-*@argv: parameter
-*Return: integer
-*/
+ * main - prints minumum number of coin
+ * @argc: n args
+ * @argv: arr args
+ * Return: always return 0
+ */
 
 int main(int argc, char *argv[])
 {
-	int t[5] = {25, 10, 5, 2, 1};
-	int i, p = 0;
+	int value, c;
 
-	if (argc == 2)
+	c = 0;
+	if (argc != 2)
 	{
-		if (atoi(argv[1]) < 0)
-		{
-			printf("%d\n", 0);
-			return (-1);
-		}
-		else
-		{
-			for (i = 0; i < 5; i++)
-			{
-				if (atoi(argv[1]) < t[i])
-					p += 1;
-				else
-					break;
-			}
-			int h = atoi(argv[1]);
-
-			return (purge(h, p, t));
-		}
-	}
-	else
-	{
-		printf("%s\n", "Error");
+		printf("Error\n");
 		return (1);
 	}
+	value = atoi(argv[1]);
+	if (value < 0)
+	{
+		printf("%d\n", 0);
+		return (0);
+	}
+	if (value % 25 >= 0)
+	{
+		c += value / 25;
+		value = value % 25;
+	}
+	if (value % 10 >= 0)
+	{
+		c += value / 10;
+		value = value % 10;
+	}
+	if (value % 5 >= 0)
+	{
+		c += value / 5;
+		value = value % 5;
+	}
+	if (value % 2 >= 0)
+	{
+		c += value / 2;
+		value = value % 2;
+	}
+	if (value % 1 >= 0)
+	{
+		c += value / 1;
+	}
+	printf("%d\n", c);
+	return (0);
 }
