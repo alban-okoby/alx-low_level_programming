@@ -2,19 +2,19 @@
 #include <stdio.h>
 
 /**
- * malloc_checked - entry point
+ * malloc_checked - The allocated memory
  * @b: param -> integer
- *
- * Return: pointer
+ * Return: void
  */
 
 void *malloc_checked(unsigned int b)
 {
-	void *z;
+	void *chaine;
 
-	z = malloc(b);
+	chaine = malloc(b);
 
-	if (z == NULL)
+	if (chaine == NULL)
 		exit(98);
-	return (z);
+
+	return (chaine);
 }
