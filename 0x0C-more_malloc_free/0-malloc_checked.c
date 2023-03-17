@@ -10,6 +10,7 @@
 void *malloc_checked(unsigned int b)
 {
 	void *chaine;
+
 	chaine = malloc(b);
 
 	if (chaine == NULL)
