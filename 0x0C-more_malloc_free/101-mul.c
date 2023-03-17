@@ -9,25 +9,36 @@ include "main.h"
 
 int main(int argc, char *argv[])
 {
-	unsigned long mul;
-	int num1, num2;
+	int i = 0;
 
 	if (argc != 3)
-	{ printf("Error\n");
-		exit(98); }
-
-	for (num1 = 1; num1 < argc; num1++)
 	{
-
-		for (num2 = 0; argv[num1][num2] != '\0'; num2++)
-		{
-
-			if (argv[num1][num2] > 57 || argv[num1][num2] < 48)
-			{  printf("Error\n");
-				exit(98); }
-		}
+		printf("Error\n");
+		exit(98);
 	}
-	mul = atol(argv[1]) *  atol(argv[2]);
-	printf("%lu\n", mul);
-	return (0);
+	else
+	{
+		while (argv[1][i] != '\0')
+		{
+			if (argv[1][i] > 57 || argv[1][i] < 48)
+			{
+				printf("Error\n");
+				exit(98);
+			}
+			i++;
+		}
+		i = 0;
+		
+		while (argv[1][i] != '\0')
+		{
+			if (argv[2][i] > 57 || argv[2][i] < 48)
+			{
+				printf("Error\n");
+				exit(98);
+			}
+			i++;
+		}
+		printf("%ld\n", (unsigned long)argv[1] * (unsigned long)argv[2]);
+		return (0);
+	}
 }
