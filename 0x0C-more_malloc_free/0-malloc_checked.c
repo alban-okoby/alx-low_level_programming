@@ -1,5 +1,5 @@
 #include "main.h"
-#include <stdio.h>
+#include <stdlib.h>
 
 /**
  * malloc_checked - The allocated memory
@@ -10,7 +10,6 @@
 void *malloc_checked(unsigned int b)
 {
 	void *chaine;
-
 	chaine = malloc(b);
 
 	if (chaine == NULL)
