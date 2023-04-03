@@ -13,7 +13,7 @@
 size_t print_listint(const listint_t *h)
 {
 	size_t nodes_number = 0;
-	
+
 	for (; h; h = h->next)
 	{
 		nodes_number++;
