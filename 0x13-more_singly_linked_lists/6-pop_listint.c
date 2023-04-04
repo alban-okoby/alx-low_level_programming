@@ -1,10 +1,14 @@
 #include "lists.h"
 
 /**
- * pop_listint - The entry point
- * @head: point to the node head address
- * return: node elt
+ * pop_listint - Supprime le premier élément d'une liste
+ * et renvoie sa valeur.
+ * @head: pointeur vers le pointeur de la tête de la liste.
+ *
+ * Return: la valeur de l'élément supprimé.
+ *         0 si la liste est vide.
  */
+
 int pop_listint(listint_t **head)
 {
 	int var2 = 0;
