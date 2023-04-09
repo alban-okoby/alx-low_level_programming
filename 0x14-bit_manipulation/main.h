@@ -1,5 +1,5 @@
-#ifndef ALX_HOLBERTON_H
-#define ALX_HOLBERTON_H
+#ifndef _ALX_HOLBERTON_H
+#define _ALX_HOLBERTON_H
 
 
 unsigned int binary_to_uint(const char *b);
@@ -13,4 +13,4 @@ int get_endianness(void);
 int _putchar(char c);
 
 
-#endif /* ALX_HOLBERTON_H */
+#endif /* _ALX_HOLBERTON_H */
