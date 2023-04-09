@@ -1,5 +1,3 @@
-#include <fcntl.h>
-#include <unistd.h>
 #include "main.h"
 /*
  * read_textfile - Reads a text file and prints it to standard output
@@ -8,37 +6,40 @@
  *
  * Return: The actual number of letters read and printed, or 0 on failure
  */
-ssize_t read_textfile(const char *filename, size_t letters) {
-    ssize_t bytes_r = 0;
-    char buffer[letters];
+ssize_t read_textfile(const char *filename, size_t letters)
+{
+    if (filename == NULL) {
+        return 0;
+    }
 
-    // Open the file
     int fd = open(filename, O_RDONLY);
     if (fd == -1) {
-        perror("Failed to open file");
-        return -1;
+        return 0;
     }
 
-    // Read the file and print its contents
-    while ((bytes_r = read(fd, buffer, sizeof(buffer))) > 0) {
-        if (write(STDOUT_FILENO, buffer, bytes_r) == -1) {
-            perror("Failed to write to standard output");
-            bytes_r = -1;
-            break;
-        }
+    char *buf = malloc(sizeof(char) * (letters + 1));
+    if (buf == NULL) {
+        close(fd);
+        return 0;
     }
 
-    // Check for errors or end-of-file
-    if (bytes_r == -1) {
-        perror("Failed to read file");
+    ssize_t bytes_read = read(fd, buf, letters);
+    if (bytes_read == -1) {
+        free(buf);
+        close(fd);
+        return 0;
     }
 
-    // Close the file and return the number of bytes read
-    if (close(fd) == -1) {
-        perror("Failed to close file");
-        bytes_r = -1;
+    buf[bytes_read] = '\0';
+
+    ssize_t bytes_written = write(STDOUT_FILENO, buf, bytes_read);
+    if (bytes_written == -1 || (size_t) bytes_written != bytes_read) {
+        free(buf);
+        close(fd);
+        return 0;
     }
 
-    return bytes_r;
+    free(buf);
+    close(fd);
+    return bytes_written;
 }
-
