@@ -6,6 +6,6 @@
 <li> How to manipulate bits and use bitwise operators </li>
 </ul>
 
-<img src="https://s3.amazonaws.com/intranet-projects-files/holbertonschool-low_level_programming/232/bitwise.PNGhttps://s3.amazonaws.com/intranet-projects-files/holbertonschool-low_level_programming/232/bitwise.PNG" />
+<img src="https://he-s3.s3.amazonaws.com/media/uploads/cb985c2.png" />
 
 <i> Alx </i>
