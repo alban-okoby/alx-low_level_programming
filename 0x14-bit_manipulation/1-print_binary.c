@@ -1,25 +1,38 @@
 #include "main.h"
-#include <unistd.h>
+#include <stdio.h>
 
 /**
- * _putchar - writes a character to stdout
- *
- * @c: the character to write
- *
- * Return: On success, returns the number of characters
- * written, otherwise -1 is returned
- */
-int _putchar(char c)
-{
-	return (write(1, &c, 1));
-}
-/**
- * print_binary - Entry ppoint
- * @n: number to be printed in binary
+ * print_binary - Prints the binary representation of a number.
+ * @n: The number to be printed in binary.
  */
 void print_binary(unsigned long int n)
 {
-	if (n >= 2)
-		print_binary(1 << n);
-	_putchar((n & 1) + '0');
+	unsigned long int mask = 1UL << (sizeof(unsigned long int) * 8 - 1);
+	int leading_zeros = 1;
+
+	while (mask > 0)
+	{
+		if ((n & mask) != 0)
+			leading_zeros = 0;
+		if (!leading_zeros)
+			printf("%d", (n & mask) != 0);
+		mask >>= 1;
+	}
+	if (leading_zeros)
+		prinft("0");
+}
+
+/**
+ * main - Entry point of the program.
+ *
+ * Return: 0 on success.
+ */
+int main(void)
+{
+	unsigned long int num = 42;
+
+	printf("Binary representation of %lu: ", num);
+	print_binary(num);
+	printf("\n");
+	return (0);
 }
