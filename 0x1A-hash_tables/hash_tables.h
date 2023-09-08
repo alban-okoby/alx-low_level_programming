@@ -32,4 +32,12 @@ typedef struct hash_table_s
 /* Function prototype for hash_table_create */
 hash_table_t *hash_table_create(unsigned long int size);
 
+/**
+ * hash_djb2 - Implements the djb2 hash algorithm
+ * @str: The string to hash
+ *
+ * Return: The hash value
+ */
+unsigned long int hash_djb2(const unsigned char *str);
+
 #endif /* ALX_HASH_TABLE */
