@@ -74,7 +74,7 @@ typedef struct shash_table_s
      shash_node_t **array;
      shash_node_t *shead;
      shash_node_t *stail;
-} sh
+} shash_table_t
 
 void shash_table_delete(shash_table_t *ht);
 void shash_table_print_rev(const shash_table_t *ht);
