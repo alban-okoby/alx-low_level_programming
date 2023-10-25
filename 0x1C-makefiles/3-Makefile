@@ -1,0 +1,33 @@
+# Makefile for 'school' executable
+
+# Compiler
+CC = gcc
+
+# Source files
+SRC = main.c school.c
+
+# Derive object files from source files
+OBJ = $(SRC:.c=.o)
+
+# Executable name
+NAME = school
+
+# delete files
+RM = rm -f
+
+# Default target: build the executable
+all: $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)
+
+clean:
+	$(RM) *~ $(NAME)
+
+# clean object files
+oclean:
+	$(RM) $(OBJ)
+
+# Now clean Emacs, Vim, executable, and object files
+fclean: clean oclean
+
+# force recompilation
+re: fclean all
