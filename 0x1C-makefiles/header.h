@@ -3,7 +3,7 @@
 
 /* Import librairies */
 #include <stdio.h>
-#include <stdlib.io>
+#include <stdlib.h>
 
 void call_print_school(void);
 
