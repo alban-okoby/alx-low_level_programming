@@ -20,31 +20,19 @@ def island_perimeter(grid):
         [0, 1, 1, 1, 0, 0],
         [0, 0, 0, 0, 0, 0]
     ]
-    island_perimeter(grid) should return 12
+    island_perimeter(grid)
     """
-    perimeter = 0
-    rows = len(grid)
-    cols = len(grid[0])
+    grid_width = len(grid[0])
+    grid_height = len(grid)
+    land_edges = 0
+    land_cells = 0
 
-    for row in range(rows):
-        for col in range(cols):
-            if grid[row][col] == 1:
-                perimeter += 4
-
-                # Check if there is land adjacent to the current cell
-                if row > 0 and grid[row - 1][col] == 1:
-                    perimeter -= 2
-                if col > 0 and grid[row][col - 1] == 1:
-                    perimeter -= 2
-
-    return perimeter
-
-if __name__ == "__main__":
-    grid = [
-        [0, 0, 0, 0, 0, 0],
-        [0, 1, 0, 0, 0, 0],
-        [0, 1, 0, 0, 0, 0],
-        [0, 1, 1, 1, 0, 0],
-        [0, 0, 0, 0, 0, 0]
-    ]
-    print(island_perimeter(grid))
+    for i in range(grid_height):
+        for j in range(grid_width):
+            if grid[i][j] == 1:
+                land_cells += 1
+                if (j > 0 and grid[i][j - 1] == 1):
+                    land_edges += 1
+                if (i > 0 and grid[i - 1][j] == 1):
+                    land_edges += 1
+    return land_cells * 4 - land_edges * 2
