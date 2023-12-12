@@ -24,14 +24,14 @@ skiplist_t *linear_skip(skiplist_t *list, int value)
 		current = express;
 		express = express->express;
 
-		printf("Value checked at indexes[%d] = [%d]\n", express->index, express->n);
+		printf("Value checked at index [%lu] = [%d]\n", express->index, express->n);
 	}
-	printf("Value found between indexes [%d] and [%d]\n",
+	printf("Value found between indexes [%lu] and [%lu]\n",
 			current->index, express->index);
 
 	while (current != NULL && current->n <= value)
 	{
-		printf("Value checked at index [%d] = [%d]\n", current->index, current->n);
+		printf("Value checked at index [%lu] = [%d]\n", current->index, current->n);
 
 		if (current->n == value)
 			return (current);
